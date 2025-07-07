@@ -28,6 +28,7 @@ header h2{
   font-size: 2.5em;
   margin: auto 20px;
   color:white;
+  cursor: pointer;
 
 }
 nav{
@@ -40,6 +41,12 @@ nav a{
   text-decoration: none;
   font-size: 25px;
   margin: 10px;
+}
+nav a:hover{
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  padding: 10px;
+  cursor: pointer;
 }
 .heroSection{
   display: flex;
@@ -74,7 +81,7 @@ nav a{
   cursor: pointer;
   border-radius:6px;
   transition: background-color 1s ease;
-  animation: fadeIn 4s ease-in-out;
+  animation: fadeIn 2s ease-in-out;
 }
 .explore-btn:hover{
   background-color: var(--color-accent);
@@ -87,6 +94,7 @@ nav a{
   flex-wrap: wrap;
   padding-top:50px;
   background: linear-gradient(140deg, var(--color-primary), var(--color-secondary));
+  animation: fadeIn 3s ease-in-out;
 }
 .card{
   background-color:--color-muted;
@@ -97,6 +105,7 @@ nav a{
   width: 100px;
   height: 300px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  animation: slideFromTop 3s ease-in-out;
 }
 .card-style{
   padding: 20px;
@@ -132,3 +141,72 @@ nav a{
   background-color: var(--color-accent);
   color: var(--color-text);
 }
+footer{
+  background-color: #f1f1f1;
+  padding:20px ;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media(max-width: 600px){
+  header{
+    flex-direction: column;
+    height: fit-content;
+    align-items: normal;
+  }
+  header h2{
+    font-size: 25px;
+    padding-top: 20px;
+  }
+  nav{
+    flex-direction: column;
+  }
+  nav a{
+   font-size: 16px;
+  }
+  .heroSection{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .heroSection h1{
+    font-size: 1.5em ;
+  }
+  .heroSection h3{
+    font-size: 0.9em ;
+  }
+  .heroSection p{
+    font-size: 0.9em ;
+  }
+  .cardContainer{
+    flex-direction: column;
+  }
+  .card{
+    width: 300px;
+    line-height: 30px;
+  }
+}
+@media(min-width: 601px) and (max-width: 1023px) {
+  .card{
+    flex: 1 1 calc(48%);
+  }
+}
+@keyframes slideFromTop {
+
+  from{
+    transform: translateY(-100%);
+  }
+  to{
+    transform: translateY(0);
+  }
+  
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
